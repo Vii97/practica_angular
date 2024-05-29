@@ -1,0 +1,9 @@
+
+
+.visitado {
+    @apply text-teal-50 bg-emerald-600 rounded-md p-1 hover:bg-emerald-900 hover:text-emerald-200
+}
+
+.noVisitado {
+    @apply text-teal-50 bg-teal-600 rounded-md p-1 hover:bg-teal-900 hover:text-teal-200
+}

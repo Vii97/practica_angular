@@ -1,0 +1,19 @@
+<div class="p-5">
+    <div class="p-2 m-4 font-medium bg-teal-200 rounded-md">
+        <div class="m-5 ">
+            <p>Ciudad: <b>{{listInput.city}}</b></p>
+            <p>País: <b>{{listInput.country}}</b></p>
+            <p>Mejor mes: <b>{{listInput.month}}</b></p>
+        </div>
+        <div class="flex justify-center space-x-4">
+            <!--El botón muestra si la ciudad fue visitada o no con un evento 'click'-->
+            <button (click)="onVisit()" [class]="visited ? 'visitado' : 'noVisitado'" type="button">{{visited ?
+                "¡Visitada!": "Sin visitar"}}</button>
+            <!--El botón elimina la ciudad de la lista-->
+            <button (click)="onDelete()" class="text-teal-50 bg-teal-600 rounded-md p-1  hover:bg-orange-800"
+                type="button">Eliminar</button>
+        </div>
+
+
+    </div>
+</div>

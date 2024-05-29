@@ -1,0 +1,25 @@
+<div class="p-8">
+    <form [formGroup]="cForm" class="flex flex-col font-medium text-teal-950 bg-teal-500 p-5 rounded-md shadow-xl">
+        <p class="font-black">¡Añade una ciudad!</p>
+        <div class="m-4">
+            <p>Ciudad:</p>
+            <input class="rounded" type="text" id="city" formControlName="city">
+            <p>País:</p>
+            <input class="rounded" type="text" id="country" formControlName="country">
+            <p>Mejor mes para visitarla:</p>
+            <div class="font-normal m-1" id="month">
+                <!--Recorro con un for los meses del formulario-->
+                @for (mes of meses; track $index) {
+                <input type="radio"[id]="mes.id" [value]="mes.name" formControlName="month">
+                <label [for]="mes.id"> {{mes.name}}</label><br>
+                }
+            </div>
+            <!--Botón que se habilita o deshabilita en función de si hay al menos tres caracteres en cada input del formulario-->
+            <div class="flex justify-end">
+                <button (click)="submit()" [disabled]="!cForm.valid"
+                    class="disabled:bg-teal-950 disabled:text-teal-800 text-teal-50 bg-teal-700 rounded-md p-1 hover:bg-blue-800"
+                    type="button">Añadir</button>
+            </div>
+        </div>
+    </form>
+</div>
